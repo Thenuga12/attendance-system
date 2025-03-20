@@ -22,3 +22,10 @@ if (response.ok) {
             return;
         }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    checkAuth();
+    const username = localStorage.getItem("username");
+    if (username && document.getElementById("username-display")) {
+        document.getElementById("username-display").innerText = username;
+    }
+});
