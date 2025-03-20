@@ -8,3 +8,17 @@ async function login() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
     });
+if (response.ok) {
+        const token = await response.text();
+        localStorage.setItem("jwt", token);
+        localStorage.setItem("username", username);
+        window.location.href = "home.html";
+    } else {
+        document.getElementById("error-msg").innerText = "Invalid username or password!";
+    }
+
+       if (!username || !password) {
+            alert("Username and password cannot be empty.");
+            return;
+        }
+}
