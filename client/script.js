@@ -29,3 +29,18 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("username-display").innerText = username;
     }
 });
+
+function checkAuth() {
+    const token = localStorage.getItem("jwt");
+    const currentPage = window.location.pathname;
+
+    if (!token && currentPage.includes("home.html")) {
+        window.location.href = "login.html";
+    }
+ }
+
+ function logout() {
+     localStorage.removeItem("jwt");
+     localStorage.removeItem("username");
+     window.location.href = "login.html";
+ }
