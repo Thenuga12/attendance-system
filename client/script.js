@@ -44,3 +44,6 @@ function checkAuth() {
      localStorage.removeItem("username");
      window.location.href = "login.html";
  }
+  if (!token && window.location.pathname.includes("home.html")) {
+          window.location.href = "login.html";
+      }
