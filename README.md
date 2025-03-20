@@ -52,6 +52,11 @@ Using the javascript for connect the sever and client
 Run the Project
 
 
+### Login Credentials
+user name: thenu
+password : a1b2
 
+user name:admin
+password: 123
    
 
